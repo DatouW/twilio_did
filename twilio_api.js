@@ -19,7 +19,6 @@ const axiosInstance = axios.create({
 });
 
 async function generateVideo(text) {
-  console.log("generating video");
   return await axiosInstance.post("/talks", {
     source_url: process.env.AVATAR_URL,
     script: {
@@ -33,7 +32,7 @@ async function generateVideo(text) {
         },
       },
     },
-    webhook: process.env.WEBHOOK,
+    // webhook: process.env.WEBHOOK,
   });
 }
 
