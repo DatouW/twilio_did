@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>video</title>
+    <style>
+        .container {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <h1>
+            <%= videoData.text %>
+        </h1>
+        <video width="640" height="360" controls>
+            <source src="<%= videoData.source %>" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </div>
+</body>
+
+</html>
