@@ -20,7 +20,6 @@ app.post("/video", async (req, res) => {
     const { status, id } = response.data;
     console.log(status, id);
     if (status === "created") {
-      // const id = "tlk_xPDB_m-rmQCPy9t1xK4Fl";
       let dataa;
       while (true) {
         await esperar(1000);
@@ -30,18 +29,15 @@ app.post("/video", async (req, res) => {
       }
       console.log(dataa.result_url);
       result_url = dataa.result_url;
-      title = "";
       res.redirect("/");
     }
   }
 });
 
 app.get("/", (req, res) => {
-  // console.log(req);
   const videoData = {
     text: title,
     source: result_url,
-    //   "https://d-id-talks-prod.s3.us-west-2.amazonaws.com/google-oauth2%7C114569263787566454359/tlk_xPDB_m-rmQCPy9t1xK4Fl/1694529878306.mp4?AWSAccessKeyId=AKIA5CUMPJBIK65W6FGA&Expires=1694616280&Signature=hjb%2BmWuHbDj3Cdkn3WieCEnSLjI%3D&X-Amzn-Trace-Id=Root%3D1-65007958-5dc022f6123c1726329b2528%3BParent%3D11d1e3e9111fc6da%3BSampled%3D1%3BLineage%3D6b931dd4%3A0",
   };
   res.render("video", { videoData });
 });
